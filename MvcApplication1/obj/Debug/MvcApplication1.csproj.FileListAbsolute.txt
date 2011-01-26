@@ -1,0 +1,5 @@
+C:\Users\rob\Documents\Visual Studio 2008\Projects\MvcApplication1\MvcApplication1\bin\MvcApplication1.dll
+C:\Users\rob\Documents\Visual Studio 2008\Projects\MvcApplication1\MvcApplication1\bin\MvcApplication1.pdb
+C:\Users\rob\Documents\Visual Studio 2008\Projects\MvcApplication1\MvcApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rob\Documents\Visual Studio 2008\Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
+C:\Users\rob\Documents\Visual Studio 2008\Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb

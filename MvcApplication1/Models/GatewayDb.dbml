@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="GatewayDB" EntityNamespace="Gateway.Data.Entities" ContextNamespace="Gateway.Data" Class="GatewayDbContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SKIRTO\SQLEXPRESS;Initial Catalog=GatewayDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GatewayDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="logs.ConversationLog" Member="ConversationLogs">
+    <Type Name="ConversationLog">
+      <Column Name="ConversationId" Type="System.String" DbType="NChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ResponseConversationId" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientApplicationName" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="GatewayId" Type="System.String" DbType="NChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientIP" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ServerIP" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="CachedResponse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorsInResponse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="ConversationLog_EnquiryRequestLog" Member="EnquiryRequestLogs" ThisKey="ConversationId" OtherKey="ConversationId" Type="EnquiryRequestLog" />
+      <Association Name="ConversationLog_ResponseLog" Member="ResponseLogs" ThisKey="ConversationId" OtherKey="ConversationId" Type="ResponseLog" />
+    </Type>
+  </Table>
+  <Table Name="logs.EnquiryRequestLog" Member="EnquiryRequestLogs">
+    <Type Name="EnquiryRequestLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConversationId" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="SequenceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RequestId" Type="System.String" DbType="NChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FinancialInstitution" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SourceType" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Branch" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="SubOffice" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NChar(490) NOT NULL" CanBeNull="false" />
+      <Association Name="ConversationLog_EnquiryRequestLog" Member="ConversationLog" ThisKey="ConversationId" OtherKey="ConversationId" Type="ConversationLog" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="logs.ResponseLog" Member="ResponseLogs">
+    <Type Name="ResponseLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConversationId" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="SequenceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="ConversationLog_ResponseLog" Member="ConversationLog" ThisKey="ConversationId" OtherKey="ConversationId" Type="ConversationLog" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="config.BranchGatewayProtocol" Member="BranchGatewayProtocols">
+    <Type Name="BranchGatewayProtocol">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientApplicationName" Type="System.String" DbType="NChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="GatewayId" Type="System.String" DbType="NChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FinancialInstitution" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SourceType" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Branch" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="SubOffice" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Protocol" Type="System.String" DbType="NChar(4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

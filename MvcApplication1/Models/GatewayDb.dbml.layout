@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GatewayDb">
+  <DataContextMoniker Name="/GatewayDbContext" />
+  <nestedChildShapes>
+    <classShape Id="8d23b217-8e59-4dbb-8ca2-e8356e4da1bb" absoluteBounds="0.75, 2, 2, 3.1170068359375">
+      <DataClassMoniker Name="/GatewayDbContext/ConversationLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f1e9208-c8dc-4809-858d-4fb460916592" absoluteBounds="0.76500000000000012, 2.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d12493c8-db22-4dae-826a-a4b615b5aedf" absoluteBounds="3.5, 3.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/GatewayDbContext/EnquiryRequestLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c37c59f-5ed7-45c4-af0a-c89d6ec9731f" absoluteBounds="3.515, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.24600341796875); (3.5 : 4.24600341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GatewayDbContext/ConversationLog/ConversationLog_EnquiryRequestLog" />
+      <nodes>
+        <classShapeMoniker Id="8d23b217-8e59-4dbb-8ca2-e8356e4da1bb" />
+        <classShapeMoniker Id="d12493c8-db22-4dae-826a-a4b615b5aedf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c36d191b-2678-426a-ac15-dfb673981ff9" absoluteBounds="3.5, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GatewayDbContext/ResponseLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15f40024-4b18-41b0-af25-282f66ad7a8a" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.35179768880208); (3.5 : 2.35179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GatewayDbContext/ConversationLog/ConversationLog_ResponseLog" />
+      <nodes>
+        <classShapeMoniker Id="8d23b217-8e59-4dbb-8ca2-e8356e4da1bb" />
+        <classShapeMoniker Id="c36d191b-2678-426a-ac15-dfb673981ff9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d6b99f79-1245-4208-a630-f4f1ae3754db" absoluteBounds="3.5, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/GatewayDbContext/BranchGatewayProtocol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="027924be-0c0b-4bc5-8265-522a11189156" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
